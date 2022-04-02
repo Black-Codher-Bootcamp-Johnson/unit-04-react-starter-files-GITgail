@@ -1,18 +1,20 @@
-import {Link} from 'react-router-dom';
-import React, {useState } from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import About from "../pages/About";
 
-function Header (){
-    return(
-    <React.Fragment>
-    <h1>My Bookcase</h1>
-    <Link to="/">Home</Link>
-    <Link to="/bookcase" className="bookLink">Bookcase</Link>
-    <Link to="/">About</Link>
-    </React.Fragment>
-    )
+const Header = (props) => {
+  return (
+    <header>
+      <h1>Bookcase</h1>
+      <nav>
+          <Link to="/">Home </Link> 
+            <Link to="/bookcase" className="bookLink">Bookcase </Link>
+            <Link to="/about" className="aboutLink">About</Link>
+      </nav>
+    </header>
+  );
 }
 
-export default Header 
+export default Header;
 
 
-//* <Link to="/">About</Link> */

@@ -1,35 +1,22 @@
-import {Link} from 'react-router-dom';
-import './About.css';
+import React from "react";
+import { Link } from "react-router-dom";
 
-function AboutUs () {
-    return(
-    <h1>About</h1>
-         <h1>About</h1>
-         <div class='breadcrumb'>
-    <Link to="/">Header</Link>
-        <div class="page">Welcome to the Bookcase Application</div>
-    <p>This application was created by Gelly.
-This bookcase app displays a list of books that a user can
-save to a local bookcase</p>
-      <p>Click on the "Add + " button to add a book to your bookcase.
-Use the search bar to find the latest books by name, author
-or description</p>  
-    
-    <button className='add-button'>+ Add</button>
-    </>
+const About = (props) => {
+  return (
+    <div className="header">
+      <h1>About</h1>
+      <div className="breadcrumb">
+        <Link to="/"> Home </Link> 
+        </div>
+      <div className="page">Welcome to the Bookcase Application.</div>
+        <p>This React application was created by <b>Gelly</b></p>
+        <p> It allows a user to add their book selection to their book list of choice.books. They can find find the latest books by name, author or description.</p>
+    </div>
 
-    )
-}
+  );
+};
 
-export default AboutUs 
-
-
-
-
-
-
-
-
+export default About;
 
 
 

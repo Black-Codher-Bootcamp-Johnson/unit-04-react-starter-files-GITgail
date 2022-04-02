@@ -1,17 +1,20 @@
-import React, {useState} from "react";
-import Book from  "./Book.js"
-import data from '../models/books.json';
+import React, { useState } from 'react';
+import Book from "./Book"
+import bookData from '../models/books.json';
 
 
 function BookList (props) {
-    const [books] = useState(bookdata);
-console.log("BookList props", props)    
-    return books.map(bookItem => <Book book={bookItem} 
-    addBook={props.addBook}/>);
+    console.log(props.books)
 
+    return props.books.map(bookItem => <Book key={bookItem.id}
+    book={bookItem}/>);
+    // return props.books.map(bookItem => <div>I am</div>)
 }
+
+
+
+
+
+
 export default BookList;
 
-
-//  book={bookItem} addBook={props.addBook}/>);
-// console.log{"BookList props" props};
