@@ -11,12 +11,23 @@ function Book(props) {
 
   return (
     <div className="book">
-      <img
-        src={props.book.volumeInfo.imageLinks.thumbnail}
-        alt={props.book.volumeInfo.title + "book cover"}
-      />
-
-      <h2>{props.book.volumeInfo.title}</h2>
+      <div className="main">
+        <img
+          src={props.book.volumeInfo.imageLinks.thumbnail}
+          alt={props.book.volumeInfo.title + "book cover"}
+        />
+        <h2>{props.book.volumeInfo.title}</h2>
+      </div>
+      {props.iAmOnBookList === true ? (
+        <button
+          className="add-button"
+          onClick={() => props.addBook(props.book.volumeInfo.title)}
+        >
+          + Add
+        </button>
+      ) : (
+        <button className="remove-button" onClick={() => props.removeBook(props.book.volumeInfo.title)}>X</button>
+      )}
     </div>
   );
 }

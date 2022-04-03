@@ -3,12 +3,12 @@ import BookList from '../components/BookList';
 // import { Link } from "react-router-dom";
 
 const BookCase = (props) => {
-    const { books, addBook } = props;
+    const { books, removeBook } = props;
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <h2>Welcome to my personal bookcase</h2>
-            <BookList books={books} addBook={addBook}></BookList>
+            <BookList books={books} removeBook={removeBook} iAmOnBookList={false}></BookList>
         </>
     );
 }

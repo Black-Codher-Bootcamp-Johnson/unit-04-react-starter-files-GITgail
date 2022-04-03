@@ -6,13 +6,13 @@ import bookData from "./models/books.json";
 import BookCase from "./pages/BookCase";
 import Home from "./pages/Home";
 import About from "./pages/About";
-
+import "./pages/styles/App.css"
 // import Home from './pages/Home';
 // import BookCase from './pages/BookCase';
 
 function App() {
   const [books, setBooks] = useState(bookData);
-
+  const [bookCase, setBookCase] = useState([]);
   return (
     <Router>
       <Routes>
@@ -35,7 +35,7 @@ function App() {
             <>
               <Header />
               {/* <h2>This is my personal bookcase</h2> */}
-              <BookCase books={books} addBook={addBook}></BookCase>
+              <BookCase books={bookCase} removeBook={removeBook}></BookCase>
             </>
           }
         />
@@ -55,7 +55,22 @@ function App() {
 
   function addBook(title) {
     console.log(`The Book ${title} was clicked`);
+    const bookTheUserWantsToAdd= books.find((book)=> book.volumeInfo.title===title)
+    if(bookTheUserWantsToAdd){
+      setBookCase([bookTheUserWantsToAdd,...bookCase])
+      setBooks(books.filter((book)=> book.volumeInfo.title !== title))
+    }
   }
+  function removeBook(title) {
+    console.log(`The Book ${title} was clicked`);
+    const bookTheUserWantsToRemove= books.find((book)=> book.volumeInfo.title===title)
+    if(bookTheUserWantsToRemove){
+      setBookCase(bookCase.filter((book)=> book.volumeInfo.title !== title))
+      setBooks([bookTheUserWantsToRemove,...books])
+    }
+  }
+
+
 }
 
 export default App;

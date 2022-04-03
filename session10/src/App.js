@@ -4,6 +4,7 @@ import './styles/App.css';
 import Header from './components/Header';
 import BookList from './components/BookList';
 import About from './pages/About';
+import Search from './components/Search';
 import data from './models/local-books.json';
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
         <Route exact path="/" render={() => (
           <Fragment>
             <Header bookLength={bookcase.length} />
+            <Search/>
             <BookList books={books} stored="library" addToBookcase={addToBookcase} removeFromBookcase={removeFromBookcase} />
           </Fragment>
         )} />

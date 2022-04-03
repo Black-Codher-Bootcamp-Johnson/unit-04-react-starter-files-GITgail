@@ -8,20 +8,25 @@ const Search = (props) => {
     }; 
 
     return (
-        
-        <div>
-            <p style={{color:"red"}}><em>{keyword && 'Keywords Typed'}</em></p> 
-           
-        <form onSubmit={(e) => handleSubmit(e)}>
-            <label for="search">Search</label>
-            <input type="text" value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}/>
-            <input type="text" name="searchBar" />
-            <button>submit</button>
-        </form>
-     </div>
-    )
-};
+
+     <div>      
+     <form onSubmit={(e) => handleSubmit(e)}>
+     <input type="text" value={keyword}
+        onChange={(e) => setKeyword(e.target.value)}/>
+      {/* <input type="text" name="searchBar" /> */}
+      <input type="text" value="keyword" />
+      <label for="search">Find</label>
+       <button>submit</button>
+       <input type="submit">Submit</input>
+       <button>add</button>
+       <input type="add"> +Add</input>
+       </form>
+      
+  </div>
+
+
+    );
+}
 export default Search;
 
 
@@ -31,8 +36,13 @@ export default Search;
 
 
 
-//   return (
-//     <div>
+
+
+
+
+
+
+//        <div>
 //         <form onSubmit={(e) => handleSubmit(e)}>
 //             <p style={{ color: "red" }}>
 //           <em>{keyword && "Keywords Typed: " + keyword}</em></p>
@@ -43,8 +53,8 @@ export default Search;
 //           type="text" name="search" value={keyword}
 //           onChange={(e) => setKeyword(e.target.value)} />
 //         {/* <input type="submit" value="submit" /> */}
-
-//         <form onSubmit={(e) => handleSubmit(e)}>
+// {/* 
+//         <form onSubmit={(e) => handleSubmit(e)}> */}
 //            <p> 
 //               <label for="search">Search:</label>
 //               <input type="text" value={props-keyword} 
@@ -55,18 +65,10 @@ export default Search;
 //              <p>   
 //               <input type="submit" value="Search" />
 //             </p>
-//                <p style={{color:"red"}}><em>{keyword && 'Keyword typed: '+ keyword}</em></p>
-//                  <button>submit</button>
-//             </form>
-//           </div>
-//     );
-// };   
+//                <p style={{color:"red"}}><em>{keyword && 'Keyword typed: '+ keyword}</em></p> 
 
-//  export default Search;
-
-
-
-
+//                <div>
+//            {/* <p style={{color:"red"}}><em>{keyword && 'Keywords Typed'}</em></p>  */}
 
 
 
